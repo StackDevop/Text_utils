@@ -5,11 +5,13 @@ export default function Textform(props) {
         console.log('you clicked on capitalize button');
         let newtext=text.toUpperCase()
         setText(newtext);
+        props.showAlert("capitalize the text succesfully","success")
     }
     const handleLowercase = ()=>{
         console.log('you clicked on lowercase button');
         let newtext=text.toLowerCase()
         setText(newtext);
+        props.showAlert("lowercase the text succesfully","success")
     }
     const[text,setText]=useState("This is default text");
     const handleOnChange=(event)=>{
@@ -26,6 +28,7 @@ export default function Textform(props) {
             </div>
             <button className="btn btn-primary my-3" onClick={handleOnClick}> Capitalize </button>
             <button className="btn btn-primary mx-3" onClick={handleLowercase}> Lowercase </button>
+            
 
         </div>
         <div className='container'>
